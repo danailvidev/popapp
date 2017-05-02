@@ -1,0 +1,279 @@
+﻿
+<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Campaign</a></li>
+    <li class="breadcrumb-item"><a href="#">Compose</a></li>
+    <li class="breadcrumb-item active">Summary</li>
+</ol>
+    <pop-users-panel></pop-users-panel>
+    <div class="panel panel-default campaign-main-panel">
+
+        <div class="panel-body">
+            <h4 class="pull-left">Name the campaign</h4>
+            <div class="clearfix"></div>
+            <hr />
+            <div class="col-sm-12 campaign-name">
+                <input type="text" value="" placeholder="Name" />
+                <label> Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod</label>
+            </div>
+            <div class="clearfix"></div>
+            <hr />
+            <h4>Choose the type of campaign</h4>
+            <hr />
+            <!--#region POPAPP TYPES-->
+            <div class="types">
+                <div *ngFor="let type of popAppTypes">
+
+                    <input type="radio" name="type" [value]="type.value" [id]="type.value" />
+
+                    <label attr.for="{{type.value}}">
+                        <img src="../images/{{type.value}}.png" alt="{{type.value}}" />
+                        <p>{{type.display}}</p>
+                    </label>
+
+                </div>
+            </div>
+            <!--#endregion-->
+            <hr />
+            <h4>preview</h4>
+            <hr />
+            <div class="row">
+                <div class="col-sm-4">
+                    <!--<span>Device:</span>-->
+                    <!--<button class="btn btn-default dropdown-toggle" type="button" id="devices" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <span class="caret"></span>
+                        {{btnText}}
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="devices" >
+                        <li *ngFor="let device of devices"><a href="#" (click)='changeDevice($event)'>{{popAppTypes.name}}</a></li>
+                    </ul>-->
+                    <div class="form-group">
+                        <label for="deviceSelect">Device:</label>
+                        <select class="form-control" id="deviceSelect">
+                            <option>iPhone</option>
+                            <option>Desctop</option>
+                            <option>iPAD</option>
+                        </select>
+                    </div>
+
+                    <div class="iphone">
+                        <div>{{campaign.headerText}}</div>
+                        <div>{{campaign.bodyText}}</div>
+                        <div class="buttons">
+                            <button *ngIf="campaign.button1Text">{{campaign.button1Text}}</button>
+                            <button *ngIf="campaign.button2Text">{{campaign.button2Text}}</button>
+                        </div>
+                    </div>
+                </div>
+                <!--<form #editPopAppForm="ngForm">
+
+                    <div class="alert alert-danger" [hidden]="editPopAppForm.form.valid">
+                        <ul *ngIf="creator.dirty && !creator.valid">
+                            <li>Creator name is required <i>(5-50 characters)</i></li>
+                        </ul>
+                        <ul *ngIf="title.dirty && !title.valid">
+                            <li *ngIf="title.errors.required">Title is required</li>
+                            <li *ngIf="title.errors.pattern">Title should have 5-20 characters</li>
+                        </ul>
+                        <ul *ngIf="description.dirty && !description.valid">
+                            <li *ngIf="description.errors.required">Description is required</li>
+                            <li *ngIf="description.errors.pattern">Description should have at least 10 characters</li>
+                        </ul>
+                        <ul *ngIf="location.dirty && !location.valid">
+                            <li *ngIf="location.errors.required">Location is required</li>
+                        </ul>
+                    </div>-->
+
+                <div class="col-sm-8 popapp-editor">
+                    <!--PICTURE-->
+                    <div class="col-sm-4">
+                        <h4>picture</h4>
+                    </div>
+                    <!--#region ICONS-->
+                    <div class="col-sm-8">
+                        <div class="row icons-container">
+                            <ul class="pull-left">
+                                <li><label html.for="asdasd">pick an icon</label><br /><input type="radio" name="iconsGroup" id="asdasd" /></li>
+                                <li><label>upload an image</label><br /><input type="radio" name="iconsGroup" /></li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <ul class="icons-list">
+                            <li><span class='glyphicon glyphicon-lock'></span></li>
+                            <li><span class='glyphicon glyphicon-piggy-bank'></span></li>
+                            <li><span class='glyphicon glyphicon-lock'></span></li>
+                            <li><span class='glyphicon glyphicon-piggy-bank'></span></li>
+                            <li><span class='glyphicon glyphicon-lock'></span></li>
+                            <li><span class='glyphicon glyphicon-piggy-bank'></span></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                    <!--#endregion-->
+                    <hr style="border-top: dashed 1px #eee;" />
+                    <!--#region BACKGROUND COLOR-->
+                    <div class="col-sm-4">
+                        <h4>background color</h4>
+                    </div>
+                    <div class="col-sm-8">
+                        Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod,
+                    </div>
+                    <div class="clearfix"></div>
+                    <!--#endregion-->
+                    <hr style="border-top: dashed 1px #eee;" />
+                    <!--#region TEXT ALIGNMENT-->
+                    <div class="col-sm-4">
+                        <h4>text alignment</h4>
+                    </div>
+                    <div class="col-sm-8">
+                        <h4>
+                            <span class="glyphicon glyphicon-align-left"></span>
+                            <span class="glyphicon glyphicon-align-center"></span>
+                            <span class="glyphicon glyphicon-align-right"></span>
+                        </h4>
+
+                    </div>
+                    <div class="clearfix"></div>
+                    <!--#endregion-->
+                    <hr style="border-top: dashed 1px #eee;" />
+
+
+
+                    <!--#region HEADER-->
+                    <div class="col-sm-4">
+                        <h4>header</h4>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="col-xs-6 nopadding">
+                            <textarea [(ngModel)]="campaign.headerText" class="form-control" placeholer="Message" rows="3" style="max-width:435px;width:200px;"></textarea>
+                        </div>
+                        <div class="col-xs-6">
+                            <p>opacity</p>
+                            <p>font</p>
+                        </div>
+
+                    </div>
+                    <div class="clearfix"></div>
+                    <!--#endregion-->
+                    <hr style="border-top: dashed 1px #eee;" />
+                    <!--#region BODY  -->
+                    <div class="col-sm-4">
+                        <h4>body</h4>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="col-xs-6 nopadding">
+                            <textarea [(ngModel)]="campaign.bodyText" class="form-control" placeholer="Message" rows="3" style="max-width:435px;width:200px;"></textarea>
+                        </div>
+                        <div class="col-xs-6">
+                            <p>opacity</p>
+                            <p>font</p>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <!--#endregion -->
+                    <hr style="border-top: dashed 1px #eee;" />
+                    <!--#region BUTTON 1-->
+                    <div class="col-sm-4">
+                        <h4>button 1 text</h4>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="col-xs-6 nopadding">
+                            <input [(ngModel)]="campaign.button1Text" class="form-control" style="max-width:435px;width:200px;" id="ex1" type="text">
+                        </div>
+                        <div class="col-xs-6">
+                            <p>opacity</p>
+                            <p>font</p>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="col-sm-4">
+                        <h4>button 1 background</h4>
+                    </div>
+                    <div class="col-sm-8">
+                        <span>Opacity:</span>
+                        <input class="form-control" type="text" value="" maxlength="3" style="width:40px;display:inline" placeholder="%" />
+                        <span>%</span>
+                        <span>Color:</span>
+                        <input class="form-control" type="text" value="" maxlength="7" style="width:80px;display:inline" placeholder="#000000" />
+                        <span>Stroke:</span>
+                        <input class="form-control" type="text" value="" maxlength="3" style="width:40px;display:inline" placeholder="" />
+                        <span (click)="addBtn()" class="pull-right add-btn">ADD BUTTON</span>
+                    </div>
+                    <div class="clearfix"></div>
+                    <!--#endregion -->
+                    <hr style="border-top: dashed 1px #eee;" />
+                    <!--#region BUTTON 2-->
+                    <div *ngIf="btn2Visible">
+                        <div class="col-sm-4">
+                            <h4>button 2 text</h4>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="col-xs-6 nopadding">
+                                <input [(ngModel)]="campaign.button2Text" class="form-control" style="max-width:435px;width:200px;" id="ex1" type="text">
+                            </div>
+                            <div class="col-xs-6">
+                                <p>opacity</p>
+                                <p>font</p>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="col-sm-4">
+                            <h4>button 2 background</h4>
+                        </div>
+                        <div class="col-sm-8">
+                            <span>Opacity:</span>
+                            <input class="form-control" type="text" value="" maxlength="3" style="width:40px;display:inline" placeholder="%" />
+                            <span>%</span>
+                            <span>Color:</span>
+                            <input class="form-control" type="text" value="" maxlength="7" style="width:80px;display:inline" placeholder="#000000" />
+                            <span>Stroke:</span>
+                            <input class="form-control" type="text" value="" maxlength="3" style="width:40px;display:inline" placeholder="" />
+                            <span (click)="hideBtn()" class="pull-right add-btn">REMOVE BUTTON</span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <hr style="border-top: dashed 1px #eee;" />
+                    </div>
+                    <!--#endregion-->
+
+                </div>
+                <!--</form>-->
+            </div>
+            <br />
+            <br />
+        </div>
+    </div>
+
+    <!--#region Modal-->
+    <!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#confirmModal">Open Modal</button>-->
+    <!--<div id="confirmModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Header: {{campaign.headerText}}</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Body: {{campaign.bodyText}}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" (click)="saveCampaign()">Send?</button>
+                </div>
+            </div>
+
+        </div>
+    </div>-->
+    <!--#endregion-->
+    <!--#region CANCEL SAVE BUTTONS-->
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="pull-right">
+                <button (click)="eraseData()" class="btnCancel" type="button">cancel</button>
+                <button (click)="saveCampaign()" class="btnSave" type="button">save</button>
+            </div>
+        </div>
+    </div>
+    <!--#endregion-->
+    <br />
+
+
+

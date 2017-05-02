@@ -1,0 +1,25 @@
+﻿
+    
+<p *ngIf="!users"><span>Loading...</span></p>
+
+<div class="row text-center">
+    <div class="col-sm-12" *ngIf="users">
+        <ul *ngFor="let us of users" class="users">
+            <!--total-->
+            <li><span class='glyphicon glyphicon-user'></span><br /><span>{{ us.totalUsers | number}}</span><br /><span>total users</span></li>
+            <!--target-->
+            <li><span class='glyphicon glyphicon-screenshot'></span><br /><span>{{ us.targetedUsers | number}}</span> <span class="percent">{{ us.targetedUsers / us.totalUsers | percent : '1.1-2'}}</span> <br /><span>targeted users</span></li>
+            <!--email-->
+            <li><span class='glyphicon glyphicon-envelope'></span><br /><span>{{ us.emailable | number}}</span> <span class="percent">{{ us.emailable / us.totalUsers | percent : '1.2-2'}}</span> <br /><span>emailable users</span></li>
+            <!--online-->
+            <li><span class='glyphicon glyphicon-signal'></span><br /><span>{{ us.online | number}}</span> <span class="percent">{{ us.online / us.totalUsers | percent : '1.2-2'}}</span> <br /><span>online users</span></li>
+            <!--offline-->
+            <li><span class='glyphicon glyphicon-circle-arrow-right'></span><br /><span>{{ us.offline | number}}</span> <span class="percent">{{ us.offline / us.totalUsers | percent : '1.2-2'}}</span> <br /><span>offline users</span></li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+

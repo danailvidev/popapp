@@ -1,0 +1,188 @@
+﻿@import '../../config/sass/config.scss';
+
+h4 {
+    text-transform: uppercase;
+    font-size: 1.1em;
+}
+
+.campaign-main-panel {
+    background: $default;
+    box-shadow: 0 3px 8px 0px rgba(0,0,0,.25);
+    box-sizing: border-box;
+
+    .iphone {
+    background: url('../../../../wwwroot/images/pages/campaign/iphone.png') no-repeat center center;
+    width: 300px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .buttons {
+        display: inline-block;
+    }
+}
+}
+/*NAME THE CAMPAIGN*/
+label {
+    font-weight: normal;
+}
+/*CHOOSE THE TYPE OF CAMPAIGN*/
+.types {
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
+.types > div {
+    text-align: center;
+    align-self: flex-end;
+    padding-left: 20px;
+}
+
+/*.types > div label, .types > div input {
+            display: block;
+            margin: 0 auto;
+        }*/
+/*PREVIEW*/
+
+
+#deviceSelect {
+    max-width: 100px;
+    display: inline-block;
+}
+/*TODO: MOVE*/
+
+
+.icons-container ul {
+    text-align: center;
+}
+
+.icons-container ul li {
+    display: inline-block;
+}
+
+ul.icons-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.icons-list li {
+    display: inline;
+    font-size: 1.5em;
+}
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.add-btn {
+    vertical-align: middle;
+    line-height: 34px;
+    color: #aeaeae;
+    text-decoration: underline;
+    font-size: 0.8em;
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    color: $primary-color;
+}
+
+.btnCancel {
+    background: #ebebeb;
+    border: 1px solid $primary-color;
+    color: $primary-color;
+    box-shadow: 0px 3px 8px 0px rgba(0,0,0,.25);
+}
+
+.btnSave {
+    background: $primary-color;
+    border: 1px solid $primary-color;
+    color: $default;
+    box-shadow: 0px 3px 8px 0px rgba(0,0,0,.25);
+}
+
+.btnCancel, .btnSave {
+    padding: 2px 45px;
+    font-size: 1.4em;
+    border-radius: 25px;
+    width: 150px;
+}
+/*breadcrump*/
+.breadcrumb > li + li:before {
+    content: "\2192";
+    color: #777;
+}
+
+.breadcrumb {
+    background: none;
+}
+
+.breadcrumb li a {
+    color: #777;
+}
+
+.breadcrumb-item.active {
+    color: $primary-color;
+}
+/*end breadcrump*/
+.glyphicon:hover {
+    color: $primary-color;
+    cursor: pointer;
+}
+/*.align-icons {
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+}*/
+
+/*#region radio types*/
+.types label {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 15px;
+    margin-right: 15px;
+    font-size: 13px;
+}
+
+.types input[type=radio] {
+    display: none;
+}
+
+.types label:before {
+    content: "";
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    position: absolute;
+    left: 50%;
+    bottom: -1px;
+    background-color: #fff;
+    border: 1px solid $primary-color;
+    border-radius: 50%;
+}
+
+.types input[type=radio]:checked + label:before {
+    background-color: $primary-color;
+}
+
+.types input[type=radio]:checked + label {
+    color: $primary-color;
+}
+/*#endregion*/
+
+/*#region group name*/
+.campaign-name input {
+    border: none;
+    border-bottom: 1px solid #000;
+    color: $secondary-color;
+}
+
+.campaign-name input:focus {
+    outline: none;
+}
+/*#endregion*/

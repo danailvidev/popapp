@@ -1,0 +1,93 @@
+<div class='main-nav'>
+    <div class="logo-area">
+        <img src="../images/logo.svg" alt="popapp" />
+    </div>
+    <nav class='navbar navbar-default sidebar' role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <div class="search">
+                <span class='glyphicon glyphicon-search'></span>
+                <input type="text" placeholder="Search for...">
+            </div>
+            <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+                <!--UL-->
+                <ul class="nav navbar-nav dashboard">
+                    <li>
+                        <div>
+                            Dashboard
+                            <img class="hidden-xs showopacity" alt="engagement" src="../images/icons/desktop.png" />
+                        </div>
+                        <ul class="forAnimate" [@slideInOut]="menuState">
+                            <li [routerLinkActive]="['link-active']">
+                                <a [routerLink]="['overview']">
+                                    Overview
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li (click)="toggleMenu($event)" class="">
+                        <div href="#" class="" data-toggle="">
+                            ENGAGEMENT
+                            <img class="hidden-xs showopacity" alt="engagement" src="../images/icons/link.png" />
+                        </div>
+
+                        <ul class="forAnimate" [@slideInOut]="menuState">
+                            <li [routerLinkActive]="['link-active']">
+                                <a [routerLink]="['group']">
+                                    Groups
+                                </a>
+                            </li>
+                            <li [routerLinkActive]="['link-active']">
+                                <a [routerLink]="['campaign']">
+                                    Campaign
+                                </a>
+                            </li>
+                            <li [routerLinkActive]="['link-active']">
+                                <a [routerLink]="['my-campaign']">
+                                    My Campaign
+                                </a>
+                            </li>
+                            <li><a href="#">Triggers</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <div>
+                            <img class="hidden-xs showopacity" alt="engagement" src="../images/icons/mail.png" />
+                            Mail Options
+                        </div>
+                        <!--UL-->
+                        <ul class="forAnimate">
+                            <li><a href="#">Mail Sender</a></li>
+                            <li><a href="#">Send Email</a></li>
+                        </ul>
+                    </li>
+                    <li (click)="toggleMenu($event)">
+                        <div>
+                            <img class="hidden-xs showopacity" alt="engagement" src="../images/icons/cog.png" />
+                            Pop app settings
+
+                        </div>
+                        <!--UL-->
+                        <ul class="forAnimate" [@slideInOut]="menuState">
+                            <li><a href="#">PopApp settings</a></li>
+                            <li><a href="#">System settings</a></li>
+                            <li><a href="#">Manage users</a></li>
+                            <li><a href="#">Manage permissions</a></li>
+                            <li><a href="#">Login logout</a></li>
+                            <li><a href="#">Campaign types</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>

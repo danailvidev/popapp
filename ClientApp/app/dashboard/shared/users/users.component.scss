@@ -1,0 +1,66 @@
+﻿@import '../../../config/sass/config.scss';
+
+ul.users {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+
+    li {
+        margin: 0;
+        display: inline-block;
+        text-align: center;
+        padding: 10px;
+        min-width: 100px;
+        max-width: 100%;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 4px 3px 8px 0px rgba(0,0,0,.25);
+        font-size: 1em;
+        line-height: 25px;
+        text-transform: uppercase;
+        border-left: 1px solid #ebebeb;
+
+        &:first-child {
+            background-color: $secondary-color;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+
+            .glyphicon {
+                color: #fff;
+                font-size: 1.6em;
+            }
+        }
+
+        &:not(:first-of-type) {
+            .glyphicon {
+                color: $primary-color;
+            }
+        }
+
+        &:last-child {
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+
+        &:first-of-type {
+            span:nth-of-type(2) {
+                color: $primary-color;
+            }
+        }
+
+        span {
+            &:nth-of-type(2) {
+                font-size: 2.5em;
+            }
+        }
+    }
+
+    .percent {
+        color: $primary-color;
+    }
+
+    .glyphicon {
+        font-size: 1.6em;
+    }
+}

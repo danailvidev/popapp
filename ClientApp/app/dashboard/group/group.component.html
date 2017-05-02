@@ -1,0 +1,164 @@
+﻿<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Group</a></li>
+    <li class="breadcrumb-item"><a href="#">Create a group</a></li>
+    <li class="breadcrumb-item"><a href="#">Target users</a></li>
+    <li class="breadcrumb-item active">Save</li>
+</ol>
+<pop-users-panel></pop-users-panel>
+<!--#region CANCEL SAVE BUTTONS-->
+<div class="row">
+    <div class="col-sm-12">
+        <div class="pull-right">
+            <button (click)="createGroup()" class="btnCreateGroup" type="button">create a group</button>
+        </div>
+    </div>
+</div>
+<br />
+<!--#endregion-->
+<div class="panel panel-default">
+    <div class="panel-body">
+        <h4 class="pull-left">Name the group</h4>
+        <div class="clearfix"></div>
+        <hr />
+        <div class="col-sm-12 group-name">
+            <input type="text" value="" placeholder="Name of the Group" />
+            <label> Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod</label>
+        </div>
+        <div class="clearfix"></div>
+        <hr />
+        <h4>Choose the type of campaign</h4>
+        <hr />
+        <ul class="devices">
+            <li *ngFor="let device of devices">
+                <input type="radio" [value]="device" name="device" [id]="device" />
+                <label attr.for="{{device}}">{{device}}</label>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!--#region FILTERS-->
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <h4 class="pull-left">Filters</h4>
+        <div class="clearfix"></div>
+        <hr />
+        <form class="filters">
+            <div class="panel-body" [hidden]="hideElement">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <select id="sel1">
+                            <option *ngFor="let trigger of ddlTriggers" name="trigger">{{trigger}}</option>
+                        </select>
+                        <label for="sel2">from:</label>
+                        <select id="sel2">
+                            <option *ngFor="let age of [18,19,20,21]">{{age}}</option>
+                        </select>
+
+                        <label for="sel2">to:</label>
+                        <select id="sel2">
+                            <option *ngFor="let age of [21,22,23,24]">{{age}}</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-5">
+                        <span class='glyphicon glyphicon-screenshot'></span>
+                        <span>14k targeted</span>
+                        <span class='glyphicon glyphicon-envelope'></span>
+                        <span>0.500K emailable</span>
+                        <span class='glyphicon glyphicon-signal'></span>
+                        <span>1.500K online</span>
+                        <span class='glyphicon glyphicon-circle-arrow-right'></span>
+                        <span>1K offline</span>
+
+                    </div>
+                    <div class="col-lg-1">
+                        <button class="pull-right" (click)="toggleElement($event)">X</button>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="panel-body" [hidden]="hideElement">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <select id="sel1">
+                            <option *ngFor="let trigger of ddlTriggers" name="trigger">{{trigger}}</option>
+                        </select>
+                        <select id="sel2">
+                            <option>more than</option>
+                        </select>
+                        <select id="sel2">
+                            <option>2 weeks</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-5">
+                        <span class='glyphicon glyphicon-screenshot'></span>
+                        <span>14k targeted</span>
+                        <span class='glyphicon glyphicon-envelope'></span>
+                        <span>0.500K emailable</span>
+                        <span class='glyphicon glyphicon-signal'></span>
+                        <span>1.500K online</span>
+                        <span class='glyphicon glyphicon-circle-arrow-right'></span>
+                        <span>1K offline</span>
+
+                    </div>
+                    <div class="col-lg-1">
+                        <button class="pull-right" (click)="toggleElement($event)">X</button>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                </div>
+            <div class="panel-body" >
+                <div class="row" >
+                    <div class="col-lg-6">
+                        <select id="sel1">
+                            <option *ngFor="let trigger of ddlTriggers" name="trigger">{{trigger}}</option>
+                        </select>
+                        <label for="sel2">currency:</label>
+                        <select id="sel2">
+                            <option>GBP</option>
+                        </select>
+                        <label for="sel2">between:</label>
+                        <select id="sel2">
+                            <option *ngFor="let age of ['200k','300k']">{{age}}</option>
+                        </select>
+                        <label for="sel2">and:</label>
+                        <select id="sel2">
+                            <option *ngFor="let age of ['200k','300k']">{{age}}</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-5">
+                        <span class='glyphicon glyphicon-screenshot'></span>
+                        <span>14k targeted</span>
+                        <span class='glyphicon glyphicon-envelope'></span>
+                        <span>0.500K emailable</span>
+                        <span class='glyphicon glyphicon-signal'></span>
+                        <span>1.500K online</span>
+                        <span class='glyphicon glyphicon-circle-arrow-right'></span>
+                        <span>1K offline</span>
+                        
+                    </div>
+                    <div class="col-lg-1">
+                        <button class="pull-right" (click)="toggleElement($event)">X</button>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                </div>
+
+</form>
+
+
+    </div>
+</div>
+
+<!--#endregion-->
+<!--#region CANCEL SAVE BUTTONS-->
+<div class="row">
+    <div class="col-sm-12">
+        <div class="pull-right">
+            <button (click)="saveGroup()" class="btnSaveGroup" type="button">save the group</button>
+        </div>
+    </div>
+</div>
+<br />
+<!--#endregion-->

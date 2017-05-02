@@ -1,0 +1,242 @@
+﻿@import '../../../config/sass/config.scss';
+
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.navbar-default {
+    background: none;
+    border: none;
+    border-radius: 0;
+    background: #333434;
+}
+
+.search {
+    text-shadow: none;
+    font-size: 13px;
+    line-height: 25px;
+    transition: all 0.5s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 162px;
+    margin: 0 auto;
+    padding: 10px 0 0 10px;
+    border-bottom: 1px solid #fff;
+}
+
+    .search input {
+        background: rgba(0,0,0,0);
+        border: none;
+        color: #fff;
+        border: 1px solid #333;
+    }
+
+        .search input:focus {
+            outline: none;
+        }
+
+    .search span {
+        color: #fff;
+        cursor: pointer;
+    }
+
+.navbar-default .navbar-nav > li > div {
+    color: $secondary-color;
+}
+
+/*nav.sidebar .navbar-nav .open .dropdown-menu > li > a:hover, nav.sidebar .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #CCC;
+    background-color: transparent;
+}*/
+
+/*.dropdown-menu > li > a {
+    color: #CCC;
+}*/
+
+.navbar-nav > li > div {
+    text-transform: uppercase;
+}
+
+nav:hover .forAnimate {
+    opacity: 1;
+}
+
+section {
+    padding-left: 15px;
+}
+
+.logo-area {
+    height: 50px;
+    background: $primary-color;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width:200px;
+}
+
+    .logo-area img {
+        height: 25px;
+        margin-left: 10px;
+    }
+
+.link-active {
+    /*TODO: active */
+}
+/*li ul.dropdown-menu.forAnimate li a:before {
+    content: '';
+    height: 41px;
+    left: 3px;
+    width: 1px;
+    background: #f00;
+    position: absolute;
+}*/
+li a {
+    color: $default;
+}
+
+@media (min-width: $resM) {
+    /* On small screens, convert the nav menu to a vertical sidebar */
+    .main-nav {
+        height: 100%;
+        width: 40px;
+        -webkit-transition: margin 200ms ease-out;
+        -moz-transition: margin 200ms ease-out;
+        -o-transition: margin 200ms ease-out;
+        transition: margin 200ms ease-out;
+    }
+
+    /*nav.sidebar .navbar-nav .open .dropdown-menu {
+        position: static;
+        float: none;
+        width: auto;
+        margin-top: 0;
+        background-color: transparent;
+        border: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }*/
+
+    nav.sidebar .navbar-collapse, nav.sidebar .container-fluid {
+        padding: 0 0px 0 0px;
+    }
+
+    /*.navbar-inverse .navbar-nav .open .dropdown-menu > li > div {
+        color: #777;
+    }*/
+
+    nav.sidebar {
+        width: $nav-width;
+        height: 100%;
+        margin-left: -160px;
+        float: left;
+        margin-bottom: 0px;
+    }
+
+        nav.sidebar li {
+            width: 100%;
+            padding: 4px 0;
+        }
+
+        nav.sidebar:hover {
+            margin-left: 0px;
+        }
+
+    .forAnimate {
+        opacity: 0;
+    }
+
+    .nav.navbar-nav li div img {
+        float: right;
+    }
+
+    .nav.navbar-nav li div {
+        padding: 10px 8px;
+    }
+
+    ul.dashboard > li:first-child a img {
+        position: absolute;
+        right: 5px;
+    }
+
+    .glyphicon.glyphicon-search {
+        float: right;
+    }
+}
+
+@media (min-width: $resXXL) {
+
+    nav.sidebar {
+        margin-left: 0px;
+        float: left;
+    }
+
+        nav.sidebar .forAnimate {
+            opacity: 1;
+        }
+
+    .nav.navbar-nav li div img {
+        float: left;
+        padding-right: 10px;
+    }
+
+    .nav.navbar-nav li:first-child div img {
+        padding-right: 2px;
+    }
+
+    .glyphicon.glyphicon-search {
+        float: left;
+    }
+
+    ul.dashboard > li:first-child div img {
+        position: relative;
+        right: 5px;
+    }
+
+    ul li a, ul li {
+        position: relative;
+    }
+    /*vertical*/
+    ul.forAnimate li a:after {
+        position: absolute;
+        content: '';
+        width: 1px;
+        height: 28px;
+        background: $primary-color;
+        left: -20px;
+    }
+    /*horizontal*/
+    ul li a:before {
+        position: absolute;
+        content: '';
+        width: 15px;
+        height: 1px;
+        background: $primary-color;
+        left: -20px;
+        bottom: 7px;
+    }
+    /*circle*/
+    ul.forAnimate li:after {
+        position: absolute;
+        content: '';
+        width: 4px;
+        height: 5px;
+        border-radius: 50%;
+        background: $primary-color;
+        left: -6px;
+        bottom: 11px;
+    }
+
+    ul.forAnimate li.link-active:after {
+        box-shadow: 0 0 10px 4px $primary-color;
+        background: tint($primary-color, 50%);
+        /*background: #eb6c85;*/
+    }
+
+    ul.forAnimate li:last-of-type a:after {
+        height: 10px;
+    }
+}

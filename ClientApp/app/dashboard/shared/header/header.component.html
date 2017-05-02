@@ -1,0 +1,17 @@
+﻿<div class="page-top" baScrollPosition maxHeight="50" (scrollChange)="scrolledChanged($event)"
+     [ngClass]="{scrolled: isScrolled}">
+    <div class="pull-right user-profile-menu">
+        <span class="date">{{weekDay}} {{date | date:'dd/MM/yyyy'}}</span>
+        <div class="dropdown">
+            <div class="dropdown-toggle" id="user-profile" data-toggle="dropdown" aria-expanded="false">
+                <span class="userName">Hello {{currentUser.userName}} <span class="glyphicon glyphicon-option-vertical"></span></span>
+            </div>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="user-profile">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="glyphicon glyphicon-user"></span>Profile</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="glyphicon glyphicon-cog"></span>Settings</a></li>
+                <li role="presentation" (click)="signOut()"><a role="menuitem" tabindex="-1"><span class="glyphicon glyphicon-log-out"></span>Sign Out</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>

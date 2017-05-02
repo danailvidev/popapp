@@ -1,0 +1,109 @@
+﻿<h4>{{title | uppercase}}</h4>
+<pop-users-panel></pop-users-panel>
+<div class="panel-group my-campaign-main-panel">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h4 class="pull-left">FILTER CAMPAIGN</h4>
+            <div class="clearfix"></div>
+            <hr />
+            <div class="types">
+                <div *ngFor="let type of popAppTypes">
+                    <input type="radio" name="type" [value]="type.value" [id]="type.value" />
+                    <label attr.for="{{type.value}}">
+                        <img src="../images/{{type.value}}.png" alt="{{type.value}}" />
+                        <p>{{type.display}}</p>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h4>campaign: center popapp</h4>
+        </div>
+        <div class="panel-body cards">
+            <div class="card">
+                <div class="card-block">
+                    <div class="card-header">
+                        <span class="pull-left glyphicon glyphicon-apple">iOS</span>
+                        <span class="pull-right">CAMPAIGN 1</span>
+                        <div class="clearfix"></div>
+                    </div>
+                    <h4 class="card-title text-center">POP UP CENTER A</h4>
+                    <div class="iphone">
+                        <div class="card">
+                            <span class="glyphicon glyphicon-remove-circle pull-right"></span>
+                            <div class="clearfix"></div>
+                            <span class="glyphicon glyphicon-shopping-cart"></span>
+                            <div class="header">Hello Jon</div>
+                            <div class="body">This is Photoshop`s version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin lorem quis.</div>
+                            <div class="buttons">
+                                <button>no, thanks</button>
+                                <button>yes, please</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center">
+                        <button class="btnDelete">delete campaign</button>
+                        <button class="btnEdit">edit campaign</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-block">
+                    <div class="card-header">
+                        <span class="pull-left glyphicon glyphicon-apple">iOS</span>
+                        <span class="pull-right">CAMPAIGN 2</span>
+                        <div class="clearfix"></div>
+                    </div>
+                    <h4 class="card-title text-center">POP UP CENTER B</h4>
+                    <div class="iphone">
+                        <div class="card">
+                            <span class="glyphicon glyphicon-remove-circle pull-right"></span>
+                            <div class="clearfix"></div>
+                            <span class="glyphicon glyphicon-shopping-cart"></span>
+                            <div class="header">Hello Jon</div>
+                            <div class="body">This is Photoshop`s version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin lorem quis.</div>
+                            <div class="buttons">
+                                <button>no, thanks</button>
+                                <button>yes, please</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center">
+                        <button class="btnDelete">delete campaign</button>
+                        <button class="btnEdit">edit campaign</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card">
+                <div class="card-block">
+                    <div class="card-header">
+                        <span class="pull-left glyphicon glyphicon-apple">iOS</span>
+                        <span class="pull-right">CAMPAIGN 3</span>
+                        <div class="clearfix"></div>
+                    </div>
+                    <h4 class="card-title text-center">POP UP CENTER B</h4>
+                    <div class="iphone">
+                        <div class="card">
+                            <span class="glyphicon glyphicon-remove-circle pull-right"></span>
+                            <div class="clearfix"></div>
+                            <span class="glyphicon glyphicon-shopping-cart"></span>
+                            <div class="header">Hello Jon</div>
+                            <div class="body">This is Photoshop`s version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin lorem quis.</div>
+                            <div class="buttons">
+                                <button>no, thanks</button>
+                                <button>yes, please</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center">
+                        <button class="btnDelete">delete campaign</button>
+                        <button class="btnEdit">edit campaign</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+﻿<!--<top-nav></top-nav>
+<sidebar-cmp></sidebar-cmp>
+<section class="main-container" [ngClass]="{sidebarPushRight: isActive}">
+    <router-outlet></router-outlet>
+</section>-->
+
+
+<div class="container-fluid main-page">
+    <pop-header></pop-header>
+    <div class="menu-content">
+        <div style="padding-top:60px;"></div>
+        <pop-nav-menu></pop-nav-menu>
+    </div>
+    <div class="body-content">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+<!--<pop-header></pop-header>
+<router-outlet></router-outlet>-->

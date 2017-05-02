@@ -1,0 +1,28 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@{
+//TODO: cache
+}
+@*<cache vary-by="@Context.Request.Path">
+    </cache>*@
+
+@{
+//TODO: prerender module for disable javascript (webpack.config asp - prerender - webpack - config.js)
+}
+
+@* asp prerender module not working on dev*@
+@*<app asp-prerender-module="ClientApp/dist/main-server">Loading...</app>*@
+
+<link rel="stylesheet" href="~/preloader.css" asp-append-version="true" />
+
+<app>
+    <div class="preloader">
+        <div></div>
+    </div>
+</app>
+
+<script src="~/dist/vendor.js" asp-append-version="true"></script>
+@section scripts {
+    <script src="~/dist/main-client.js" asp-append-version="true"></script>
+}

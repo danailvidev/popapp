@@ -1,0 +1,26 @@
+﻿@import './config/sass/config.scss';
+
+.container-fluid.main-page {
+    background: #ebebeb;
+    transition: all 0.5s ease; 
+
+    .body-content {
+        height: 100%;
+        width: calc(100% - $nav-width);
+        margin-left: $nav-width;
+    }
+
+
+    @media (max-width: $resM) {
+        /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */
+        .body-content {
+            padding-top: 50px;
+        }
+    }
+
+    @media (max-width: $resXXL) {
+        .body-content {
+            margin-left: 40px;
+        }
+    }
+}
